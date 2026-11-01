@@ -1,0 +1,278 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Asymmetric Hero */
+.heroSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badgeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.issueNumber {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-muted);
+}
+
+.heroHeadline {
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.heroLead {
+  font-size: 1.15rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Hero Right Image Frame */
+.heroRight {
+  position: relative;
+}
+
+.heroFrame {
+  position: relative;
+  background-color: var(--color-paper-card);
+  border: var(--border-solid);
+  box-shadow: 8px 8px 0 var(--color-ink);
+  overflow: hidden;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.heroFrame:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0 var(--color-ink);
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.frameSticker {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  border: 1px solid var(--color-paper);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.frameStickerIcon {
+  color: var(--color-accent);
+}
+
+.captionTag {
+  padding: 10px 14px;
+  background-color: var(--color-paper);
+  border-top: var(--border-solid);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-muted);
+}
+
+/* Curated Section */
+.curatedSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--border-solid);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionKicker {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+}
+
+.viewAllLink {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
+}
+
+.viewAllLink:hover {
+  color: var(--color-accent);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.errorBox {
+  padding: 3rem;
+  border: var(--border-solid);
+  background-color: var(--color-paper-card);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.errorMessage {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+/* Manifesto Banner */
+.manifestoBanner {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  border-top: var(--border-solid);
+  border-bottom: var(--border-solid);
+  padding: 5rem 1.5rem;
+}
+
+.manifestoInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.manifestoKicker {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+}
+
+.manifestoHeading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-style: italic;
+  font-weight: 400;
+  max-width: 900px;
+  line-height: 1.2;
+}
+
+.manifestoBody {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 760px;
+  color: #D3CDC2;
+}
+
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #3F3E3B;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillarNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.pillarTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.pillar p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #BEB7A9;
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
+  }
+  .manifestoGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+

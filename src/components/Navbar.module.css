@@ -1,0 +1,213 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-paper);
+  border-bottom: var(--border-solid);
+}
+
+.topTicker {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 5px 1rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tickerContent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  white-space: nowrap;
+}
+
+.bullet {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+}
+
+.mainNav {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.logoSymbol {
+  color: var(--color-accent);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.logoTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: -0.04em;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.editionPill {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  background-color: var(--color-sage-light);
+  border: 1px solid var(--color-ink);
+  margin-left: 4px;
+}
+
+/* Nav */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navItem {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  position: relative;
+  padding: 4px 0;
+  transition: color var(--transition-fast);
+}
+
+.navItem:hover {
+  color: var(--color-accent);
+}
+
+.navItemActive {
+  color: var(--color-accent);
+}
+
+.navItemActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+/* Actions */
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.authLink, .authBtn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.authLink:hover, .authBtn:hover {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.cartBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: var(--color-paper-card);
+  color: var(--color-ink);
+  border: var(--border-solid);
+  padding: 7px 14px;
+  box-shadow: var(--shadow-offset-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cartBtn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-offset);
+}
+
+.cartText {
+  letter-spacing: 0.05em;
+}
+
+.cartBadge {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Cart Bounce Micro-interaction */
+.badgeBounce {
+  animation: bounceKeyframe 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceKeyframe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .topTicker {
+    font-size: 0.65rem;
+  }
+  .tickerContent span:nth-child(n+4) {
+    display: none;
+  }
+  .mainNav {
+    padding: 0.9rem 1rem;
+    gap: 0.75rem;
+  }
+  .navigation {
+    gap: 1rem;
+  }
+  .editionPill {
+    display: none;
+  }
+  .logoTitle {
+    font-size: 1.35rem;
+  }
+}
+

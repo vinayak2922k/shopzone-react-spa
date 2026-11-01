@@ -1,0 +1,117 @@
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Editorial Sticker Badge ("Free shipping over $50") */
+.sticker-badge {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: var(--border-solid);
+  box-shadow: var(--shadow-offset);
+  transform: rotate(-3deg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  user-select: none;
+}
+
+.sticker-badge:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: var(--shadow-offset-hover);
+}
+
+/* Page enter transition */
+.page-container {
+  animation: pageFadeIn 0.22s ease-out;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+  width: 100%;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

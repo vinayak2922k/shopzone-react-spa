@@ -1,0 +1,458 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+.crumbDivider {
+  color: #B5AE9E;
+}
+
+.crumbCategory {
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.crumbCurrent {
+  color: var(--color-ink);
+  font-weight: 600;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Layout */
+.productLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Gallery */
+.galleryCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mainImageFrame {
+  position: relative;
+  background-color: var(--color-paper-card);
+  border: var(--border-solid);
+  box-shadow: 6px 6px 0 var(--color-ink);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform var(--transition-medium);
+}
+
+.mainImageFrame:hover .mainImage {
+  transform: scale(1.04);
+}
+
+.floatingDiscount {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+.thumbnailsRow {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.thumbnailBtn {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-paper-card);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 2px 2px 0 var(--color-ink);
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.thumbnailBtn:hover {
+  transform: translateY(-2px);
+}
+
+.thumbActive {
+  border: 2.5px solid var(--color-accent);
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+.thumbImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Info Column */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brandName {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-muted);
+}
+
+.productTitle {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.starIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.starFilled {
+  color: var(--color-accent);
+}
+
+.starEmpty {
+  color: #D3CCC0;
+}
+
+.ratingNumber {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stockNote {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: var(--border-solid);
+  border-bottom: var(--border-solid);
+}
+
+.activePrice {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.struckPrice {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--color-ink-muted);
+  text-decoration: line-through;
+}
+
+.taxPill {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  background-color: var(--color-sage-light);
+  border: 1px solid var(--color-ink);
+}
+
+.descriptionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specHeading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.descriptionText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink-muted);
+}
+
+/* Stepper & Desktop Purchase */
+.desktopPurchaseRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.stepperContainer {
+  display: inline-flex;
+  align-items: center;
+  border: var(--border-solid);
+  background-color: var(--color-paper-card);
+  box-shadow: var(--shadow-offset);
+  height: 52px;
+}
+
+.stepperBtn {
+  background: none;
+  border: none;
+  width: 44px;
+  height: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink);
+  transition: background-color var(--transition-fast);
+}
+
+.stepperBtn:hover {
+  background-color: var(--color-paper-muted);
+}
+
+.stepperValue {
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 32px;
+  text-align: center;
+}
+
+.addToCartDesktop {
+  flex: 1;
+  height: 52px;
+}
+
+.addedNotice {
+  background-color: var(--color-sage-light);
+  border: var(--border-solid);
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--color-ink);
+  animation: noticeSlide 0.2s ease-out;
+}
+
+@keyframes noticeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.specsTable {
+  margin-top: 1rem;
+  border-top: 1px dashed #C8C0AF;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+}
+
+.specKey {
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.specVal {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Mobile Sticky Bar */
+.mobileStickyBar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-paper);
+  border-top: var(--border-solid);
+  padding: 10px 16px;
+  z-index: 90;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.mobileStickyInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.mobileStickyPrice {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobilePriceLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.mobilePriceVal {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mobileStickyActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobileStepper {
+  display: inline-flex;
+  align-items: center;
+  border: var(--border-solid);
+  background-color: var(--color-paper-card);
+  height: 40px;
+}
+
+.miniStepperBtn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.miniStepperVal {
+  padding: 0 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Error Box */
+.errorBox {
+  background-color: var(--color-paper-card);
+  border: var(--border-solid);
+  box-shadow: var(--shadow-offset);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.errorIcon {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+}
+
+.errorTitle {
+  font-size: 2rem;
+}
+
+.errorText {
+  color: var(--color-ink-muted);
+  max-width: 500px;
+}
+
+@media (max-width: 850px) {
+  .productLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .desktopPurchaseRow {
+    display: none;
+  }
+  .mobileStickyBar {
+    display: block;
+  }
+}
+

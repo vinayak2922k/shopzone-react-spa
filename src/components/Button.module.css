@@ -1,0 +1,117 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: var(--border-solid);
+  box-shadow: var(--shadow-offset);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: var(--color-paper-card);
+  color: var(--color-ink);
+  user-select: none;
+  z-index: 1;
+}
+
+.button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-offset-hover);
+}
+
+.button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-offset-active);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: var(--shadow-offset-sm);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.secondary {
+  background-color: var(--color-paper-card);
+  color: var(--color-ink);
+}
+
+.sage {
+  background-color: var(--color-sage-light);
+  color: var(--color-ink);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-ink);
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: #FFFFFF;
+}
+
+/* Sizes */
+.sm {
+  padding: 6px 14px;
+  font-size: 0.75rem;
+}
+
+.md {
+  padding: 10px 22px;
+  font-size: 0.875rem;
+}
+
+.lg {
+  padding: 14px 30px;
+  font-size: 1rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Micro-interaction: Wipe Fill from bottom on hover */
+.wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-ink);
+  transform: translateY(100%);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.primary:hover:not(:disabled) .wipe,
+.secondary:hover:not(:disabled) .wipe,
+.sage:hover:not(:disabled) .wipe,
+.outline:hover:not(:disabled) .wipe,
+.danger:hover:not(:disabled) .wipe {
+  transform: translateY(0);
+}
+
+.label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.18s ease;
+}
+
+.primary:hover:not(:disabled) .label,
+.secondary:hover:not(:disabled) .label,
+.sage:hover:not(:disabled) .label,
+.outline:hover:not(:disabled) .label,
+.danger:hover:not(:disabled) .label {
+  color: #FFFFFF;
+}
+
